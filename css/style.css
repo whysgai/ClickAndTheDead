@@ -1,0 +1,125 @@
+/*
+Project Name: Blank Template
+Client: Your Client
+Author: Your Name
+Developer @GA in NYC
+*/
+
+
+/******************************************
+/* SETUP
+/*******************************************/
+
+/* Box Model Hack */
+* {
+     /*border: thin solid black;*/
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 10px 10px; /* note the padding around a right floated image */
+}
+
+.alignleft {
+	float: left;
+	margin: 0 10px 10px 0; /* note the padding around a left floated image */
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     color: #000;
+     font-size: 10px;
+     line-height: 1.4;
+     font-family: Helvetica, Arial, sans-serif;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* Center the container */
+#container {
+	width: 460px;
+	margin: auto;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+ul {
+  margin-left: 30%;
+}
+.buttonLocked {
+  background: grey;
+}
+.buttonGo {
+  background: blue;
+}
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}
+.centerText {
+  text-align: center;
+}
+.simpleBorder{
+  border: thin solid black;
+}
+#clockdiv, #buttonDiv {
+  margin: 1rem;
+  width: 42%;
+}
+#buttonDiv p{
+  font-size: 1.05rem;
+  margin-top: 0;
+}
+#clickButton {
+  color: white;
+  text-decoration: none;
+  padding: 1em;
+  border-radius: 3px;
+  display: inline-block;
+  margin-left: 33%;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+#clockdiv{
+	font-family: sans-serif;
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	font-size: 30px;
+}
+#clockdiv > div{
+	padding: 10px;
+	border-radius: 3px;
+	background: #00BF96;
+	display: inline-block;
+}
+#clockdiv div > span{
+	padding: 15px;
+	border-radius: 3px;
+	background: #00816A;
+	display: inline-block;
+}
