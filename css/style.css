@@ -67,8 +67,16 @@ body {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
-ul {
+footer ul {
   margin-left: 30%;
+}
+nav a {
+  width: 49.7%;
+  border-top: thin solid grey;
+  border-left: thin solid grey;
+  border-right: thin solid grey;
+  display: inline-block;
+  text-decoration: none;
 }
 .buttonLocked {
   background: grey;
@@ -82,6 +90,10 @@ ul {
 }
 .centerText {
   text-align: center;
+}
+.currentPage {
+  background: grey;
+  color: white;
 }
 .simpleBorder{
   border: thin solid black;
