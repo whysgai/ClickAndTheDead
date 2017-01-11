@@ -1,59 +1,74 @@
 var status = "Not started";
-var clicks = 0;
+var clickTime = 0;
+var waitDelay = Math.round(Math.random() * (2000 - 25) + 25);
 var secondsLeft = 3;
+var miliseconds = 0;
 var nIntervalID;
+var nIntervalID2;
 
-function clicking(){
-  if(status=="Running"){
-    clicks++;
-  }
-  else {
-    alert("Game is not running.");
-  }
-}
 function buttonSwitch(){
   $("#clickButton").toggleClass("buttonLocked buttonGo");
 }
-function timer (secondsLeft){
+function countdownPost (secondsLeft){
   console.log("Called timer: "+ secondsLeft);
   $(".seconds").html(secondsLeft);
 }
-function clockStart () {
+function countdownStart () {
   nIntervalID = setInterval(function(){
-    console.log("SET INTERVAL GO");
-    timer(secondsLeft);
+    console.log("CountDown INTERVAL GO");
+    countdownPost(secondsLeft);
     if (secondsLeft == 0){
-      clockStop();
+      stop(nIntervalID);
       $(".seconds").html("GO!");
       $(".smalltext").html("");
+      delayTimer();
     }
     else {
       secondsLeft--;
     }
   },1000);
 }
-function clockStop () {
-  clearInterval(nIntervalID);
+
+function delayTimer () {
+  nIntervalID = setInterval(function(){
+    console.log("DelayTimer INTERVAL GO");
+    if (miliseconds == waitDelay){
+      clickTimer();
+      buttonSwitch();
+      stop(nIntervalID);
+    }
+    else {
+      miliseconds++;
+      console.log("waitDelay is "+waitDelay);
+      console.log("ms left "+miliseconds);
+    }
+  });
+}
+function clickTimer () {
+  console.log("Start Click Timer");
+  nIntervalID2 = setInterval(function(){
+      clickTime++;
+  });
+}
+function stop (intVar) {
+  clearInterval(intVar);
 }
 function postClicks(){
-  $("#clickDisplay").html(clicks+" clicks per minute");
+  console.log(clickTime+" miliseconds");
+  $("#clickDisplay").html(clickTime+" miliseconds");
 }
-
-
 $(document).ready(function(){
   $(window).on("keydown", function(e){
     if (e.which===32 && (status=="Not started" || status == "Paused")){
       status = "Running";
-      buttonSwitch();
-      clockStart();
-    }
-    else if (e.which===32 && status=="Running") {
-      status = "Paused";
-      buttonSwitch();
+      countdownStart();
+
     }
   });
   $("#clickButton").on("click", function(e){
     e.preventDefault;
-    clicking()
+    stop(nIntervalID2);
+    postClicks();
+    buttonSwitch();
   });
 })
