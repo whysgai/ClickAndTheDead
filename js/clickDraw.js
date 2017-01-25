@@ -1,7 +1,6 @@
 var status = "Not started";
 var clickTime = 0;
 var waitDelay = 0;
-var secondsLeft = 3;
 var miliseconds = 0;
 var arrayClicks = [];
 var avgClicks = 0;
@@ -11,28 +10,10 @@ var nIntervalID2;
 
 
 function buttonSwitch(){
-  $("#clickButton").toggleClass("buttonLocked buttonGo");
-}
-function countdownPost (secondsLeft){
-  console.log("Called timer: "+ secondsLeft);
-  $(".seconds").html(secondsLeft);
-}
-function countdownStart () {
-  nIntervalID = setInterval(function(){
-    console.log("CountDown INTERVAL GO");
-    countdownPost(secondsLeft);
-    if (secondsLeft == 0){
-      stop(nIntervalID);
-      $(".seconds").html("GO!");
-      $(".smalltext").html("");
-      delayTimer();
-    }
-    else {
-      secondsLeft--;
-    }
-  },1000);
+  $("#clickButton").toggleClass("buttonLocked buttonGo").html("GO GO GO");
 }
 function delayTimer () {
+  $("#clickButton").html("Wait For It");
   nIntervalID = setInterval(function(){
     console.log("DelayTimer INTERVAL GO");
     if (miliseconds == waitDelay){
@@ -81,20 +62,25 @@ $(document).ready(function(){
   $(window).on("keydown", function(e){
     if (e.which===32 && status=="Not started") {
       status = "Running";
-      countdownStart();
+      delayTimer();
     }
     else if (e.which===32 && status=="Stopped") {
       reset();
       status = "Running";
-      countdownStart();
+      delayTimer();
     }
   });
   $("#clickButton").on("click", function(e){
     e.preventDefault;
-    status = "Stopped";
-    stop(nIntervalID2);
-    calcAvg();
-    postClicks();
-    buttonSwitch();
+    if (status!="Running") {
+      alert("Game is not running.");
+    }
+    else {
+      status = "Stopped";
+      stop(nIntervalID2);
+      calcAvg();
+      postClicks();
+      buttonSwitch();
+    }
   });
 })
