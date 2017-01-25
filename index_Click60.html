@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="Your description goes here">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>Click Counter</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+
+	</head>
+	<body>
+		<div id="container">
+			<header class="centerText simpleBorder">
+				<h1>The Click and the Dead</h1>
+				<h2>Measuring click rates and response times since 2016</h2>
+				<nav>
+						<a class="currentPage" href="#">Gone in Clicks-ty Seconds</a>
+						<a href="index_ClickDraw.html">Clickdraw</a>
+				</nav>
+			</header>
+			<section class="simpleBorder clearfix">
+				<h2 class="centerText">How many times can you click in ten seconds?</h2>
+				<div id="clockdiv" class="centerText">
+				  <div>
+				    <span class="seconds">10</span>
+				    <div class="smalltext">Seconds</div>
+				  </div>
+				</div>
+				<div id="buttonDiv">
+					<p class="centerText">Press [space] to begin</p>
+					<a id="clickButton" class="buttonLocked centerText" href="#">Click Here</a>
+					<p id="clickDisplay" class="centerText"></p>
+				</div>
+			</section>
+			<footer class="clear simpleBorder">
+				<h3 class="centerText">Other titles considered:</h3>
+				<ul>
+					<li>The Click and the Furious</li>
+					<li>Click in 60 Seconds</li>
+					<li>Clickdraw</li>
+				</ul>
+			</footer>
+		</div><!-- #container -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		<script src="js/click60.js"></script>
+	</body>
+</html>
