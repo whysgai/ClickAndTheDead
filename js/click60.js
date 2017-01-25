@@ -1,6 +1,6 @@
 var status = "Not started";
 var clicks = 0;
-var secondsLeft = 60;
+var secondsLeft = 10;
 var nIntervalID;
 
 function clicking(){
@@ -38,7 +38,7 @@ function clockStop () {
   clearInterval(nIntervalID);
 }
 function postClicks(){
-  $("#clickDisplay").html(clicks+" clicks per minute");
+  $("#clickDisplay").html(clicks+" clicks in ten seconds, or "+(clicks*6)+" per minute.");
 }
 
 
