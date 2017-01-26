@@ -42,7 +42,6 @@ function postClicks(){
   $("#sixtyDisplay").html(clicks*6+" clicks per minute.");
 }
 
-
 $(document).ready(function(){
   $(window).on("keydown", function(e){
     if (e.which===32 && (status=="Not started" || status == "Paused")){
