@@ -50,7 +50,8 @@ body {
      color: #000;
      font-size: 10px;
      line-height: 1.4;
-     font-family: Helvetica, Arial, sans-serif;
+     font-family: "Lato", Helvetica, Arial, sans-serif;
+     background: rgba(203, 197, 210, 1);
 }
 
 
@@ -71,12 +72,20 @@ footer ul {
   margin-left: 30%;
 }
 nav a {
-  width: 49%;
-  border-top: thin solid grey;
-  border-left: thin solid grey;
-  border-right: thin solid grey;
+  width: 49.795%;
+  margin: 0;
+  font-size: 1rem;
+  padding: .5rem 0;
   display: inline-block;
   text-decoration: none;
+  background: grey;
+  color: white;
+}
+.cardStyles{
+  background: rgba(237, 237, 236, 1);
+  border: thin solid black;
+  margin-top: 1rem;
+  box-shadow: 0px 3px 2px rgba(53, 49, 57, .75);
 }
 .buttonLocked {
   background: grey;
@@ -91,16 +100,19 @@ nav a {
 .centerText {
   text-align: center;
 }
-.currentPage {
-  background: grey;
-  color: white;
+.inactivePage {
+  background: rgba(237, 237, 236, 1);
+  color: black;
 }
-.simpleBorder{
+.inactivePage:hover{
+  background: rgba(214, 213, 215, 1);
+}
+/*.simpleBorder{
   border: thin solid black;
-}
+}*/
 #clockdiv, #buttonDiv {
   margin: 1rem;
-  width: 42%;
+  width: 93.5%;
 }
 #buttonDiv p{
   font-size: 1.05rem;
@@ -109,12 +121,13 @@ nav a {
 #clickButton {
   color: white;
   text-decoration: none;
-  padding: 1em;
+  padding: .8em;
   border-radius: 3px;
   display: inline-block;
-  margin-left: 33%;
+  margin-left: 27%;
   margin-bottom: 1rem;
-  font-weight: bold;
+  /*font-weight: bold;*/
+  font-size: 2rem;
 }
 #clockdiv{
 	font-family: sans-serif;
