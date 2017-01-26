@@ -9,8 +9,8 @@
 
 		<!-- external CSS link -->
 		<link href="https://fonts.googleapis.com/css?family=Arsenal:400,700|Lato:100,400,900" rel="stylesheet">
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="../css/normalize.css">
+		<link rel="stylesheet" href="../css/style.css">
 
 	</head>
 	<body>
@@ -19,23 +19,24 @@
 				<h1>The Click and the Dead</h1>
 				<h2>Measuring click rates and response times since 2016</h2>
 				<nav>
-						<a  href="#">Gone in Clicks-ty Seconds</a>
-						<a class="inactivePage" href="pages/index_ClickDraw.html">Clickdraw</a>
+						<a class="inactivePage" href="../index.html">Gone in Clicks-ty Seconds</a>
+						<a href="#">Clickdraw</a>
 				</nav>
 			</header>
 			<section class=" clearfix cardStyles">
-				<h2 class="centerText">How many times can you click in ten seconds?</h2>
-				<div id="clockdiv" class="centerText simpleBorder">
+				<h2 class="centerText">How fast is your click?</h2>
+				<h3 class="centerText">Press the button when it turns blue</h3>
+				<!-- <div id="clockdiv" class="alignleft centerText">
 				  <div>
-				    <span class="seconds">10</span>
-				    <div class="smalltext">Seconds</div>
+				    <span class="seconds">_</span>
+				    <div class="smalltext">Ready?</div>
 				  </div>
-				</div>
-				<div id="buttonDiv" class="simpleBorder">
+				</div> -->
+				<div id="buttonDiv" class=" simpleBorder">
 					<p class="centerText">Press [space] to begin</p>
 					<a id="clickButton" class="buttonLocked centerText" href="#">Click Here</a>
 					<p id="clickDisplay" class="centerText"></p>
-					<p id="sixtyDisplay" class="centerText"></p>
+					<p id="avgDisplay" class="centerText"></p>
 				</div>
 			</section>
 			<footer class="clear cardStyles">
@@ -48,6 +49,6 @@
 			</footer>
 		</div><!-- #container -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-		<script src="js/click60.js"></script>
+		<script src="../js/clickDraw.js"></script>
 	</body>
 </html>
