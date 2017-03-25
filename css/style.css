@@ -68,9 +68,6 @@ body {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
-footer ul {
-  margin-left: 30%;
-}
 nav a {
   width: 49.795%;
   margin: 0;
@@ -80,6 +77,16 @@ nav a {
   text-decoration: none;
   background: grey;
   color: white;
+}
+footer div {
+  margin-left: 15%;
+}
+footer p {
+  margin-left: 40%;
+}
+footer a {
+  color: inherit;
+  font-family: inherit;
 }
 .cardStyles{
   background: rgba(237, 237, 236, 1);
